@@ -1,6 +1,14 @@
+*{
+    box-sizing: border-box;
+}
 h1{
     text-align: center;
+    padding: 15px;
 }
 p{
     text-align: center;
+}
+img{
+    height: auto;
+    max-width: 100%;
 }

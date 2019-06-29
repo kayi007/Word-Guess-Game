@@ -1,11 +1,36 @@
 // Create a list of word for the game
-let gotArr = ["targaryen", "stark", "lannister", "greyjoy", "arryn", "baratheon", "tully", "tyrell", "martell", "frey", "bolton"]
+let gotArr = ["targaryen", "stark", "lannister", "greyjoy", "arryn", "baratheon", "tarly", "tyrell", "martell", "frey", "bolton"]
 
-// Create an array of img objects
-let imgArr = [
-    {name: "targaryen", image: "Targaryen.png"},
-    {name: "stark", image: "stark.png"}
-]
+// Create an object of img
+let imgArr = {
+   "targaryen": "assets/images/Targaryen.png",
+   "stark": "assets/images/stark.png",
+   "lannister": "assets/images/lannister.png",
+   "greyjoy": "assets/images/greyjoy.png",
+   "arryn": "assets/images/arryn.png",
+   "baratheon": "assets/images/baratheon.png",
+   "tarly": "assets/images/tarly.png",
+   "tyrell": "assets/images/tyrell.jpeg",
+   "martell": "assets/images/martell.jpg",
+   "frey": "assets/images/frey.png",
+   "bolton": "assets/images/bolton.png"
+}
+
+// Create an object of hint img 
+let hintImgArr = {
+    "targaryen": "assets/images/Daenerys.jpg",
+    "stark": "assets/images/arya.jpg",
+    "lannister": "assets/images/tyrion.jpg",
+    "greyjoy": "assets/images/theon.jpg",
+    "arryn": "assets/images/robin.jpg",
+    "baratheon": "assets/images/stannis.jpg",
+    "tarly": "assets/images/sam.jpg",
+    "tyrell": "assets/images/margaery.jpg",
+    "martell": "assets/images/dorne.jpg",
+    "frey": "assets/images/walder.jpg",
+    "bolton": "assets/images/ramsey.jpg"
+}
+
 // Create an array of hint objects
 
 // Create counting variables
@@ -17,8 +42,6 @@ let winContent = document.getElementById("winScore");
 let guessLeftContent = document.getElementById("guessesLeft");
 let dashContent = document.getElementById("dash");
 let guessContent = document.getElementById("guessedLetter");
-let imgContent = document.getElementById("imgDisplay");
-let hintContent = document.getElementById("hintImg");
 
 // FUNCTIONS & DECLARATIONS
 // ==============================================================================
@@ -38,11 +61,17 @@ function dashCreator(gameWord){
 let wrongGuessesArr = [];
 
 // Display image according to the word 
-if(word == imgArr.name)
-{
-    imgContent.innerHTML = '<img src="../images'+imgArr.image+'">'
-    // hintContent = '<img src="../images'+>'
-}
+let imgContent = document.getElementById("imgDisplay");
+let newImg = document.createElement("img");
+newImg.setAttribute("src",imgArr[word]);
+imgContent.appendChild(newImg);
+
+// Display hint image according to the word 
+let hintContent = document.getElementById("hintImg");
+let newHint = document.createElement("img");
+newHint.setAttribute("src",hintImgArr[word]);
+hintContent.append(newHint);
+
 
 // MAIN PROCESS
 // ==============================================================================
@@ -50,18 +79,14 @@ if(word == imgArr.name)
 dashCreator(word);
 dashContent.textContent = dashArr.join(" ");
 
+// Display Number of Guesses
+guessLeftContent.textContent = guessLeft;
+
 // This function is run whenever the user presses a key.
 document.onkeyup = function (event) {
 
     // Determines which key was pressed.
     let userGuess = event.key;
-
-    // // Display image according to the word 
-    // if(word == imgArr.name)
-    // {
-    //     imgContent = '<img src="../images'+imgArr.image+'">'
-    //     // hintContent = '<img src="../images'+>'
-    // }
 
     // If the computer generated word contains the letter user guessed & our dash array does not have user's guess (or else our guess left count will decrease)
     if (word.includes(userGuess) && (!dashArr.includes(userGuess))){

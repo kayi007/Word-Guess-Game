@@ -17,7 +17,7 @@
     <header>
         <div class="container">
             <div class="row">
-                <div class="col">
+                <div class="col border">
                     <h1>The Game of Throne</h1>
                 </div>
             </div>
@@ -27,14 +27,24 @@
     <div class="container">
         <div class="row">
             <!-- 2nd row first column -->
-            <div class="col">
+            <div class="col-6 border" id="sigil">
                 <p>What House is this?</p>
-                <div id="imgDisplay"></div>
+                <br />
+                <div class="row">
+                    <div class="col-12">
+                        <div id="imgDisplay"></div>
+                    </div>
+                </div>
+                <br /><br />
                 <p>Hint:</p>
-                <div id="hintImg"></div>
+                <div class="row">
+                    <div class="col-12">
+                        <div id="hintImg"></div>
+                    </div>
+                </div>
             </div>
             <!-- 2nd row second column -->
-            <div class="col">
+            <div class="col-6 border" id="gameControl">
                 <p>Press any key to get started!</p>
                 <p>Wins</p>
                 <p id="winScore"></p>
