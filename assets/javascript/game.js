@@ -130,7 +130,7 @@ document.onkeyup = function (event) {
     }
     // WRONG LETTER GUESS
     // If guess left count is not 1 & user's guess is not in the wrong guess array & user's guess is not in the dash array (or else guess left count will decrese)
-    else if (guessLeft != 1 && !wrongGuessesArr.includes(userGuess) && (!dashArr.includes(userGuess))){
+    else if (guessLeft > 1 && !wrongGuessesArr.includes(userGuess) && (!dashArr.includes(userGuess))){
         // Push the user's guess into wrong guess array
         wrongGuessesArr.push(userGuess);
         // Display wrong guess array in sting with , seperator
