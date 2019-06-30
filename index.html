@@ -10,14 +10,15 @@
     <link rel="stylesheet" type="text/css" href="assets/css/style.css"> 
     <!-- Bootstrap CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=IM+Fell+English+SC|Lustria&display=swap" rel="stylesheet">
 
 </head>
 <body>
     <header>
-        <div class="container">
-            <div class="row">
-                <div class="col border">
+        <div class="container-fluid">
+            <div class="row" id="GOT">
+                <div class="col-12">
                     <h1>The Game of Throne</h1>
                 </div>
             </div>
@@ -27,16 +28,15 @@
     <div class="container">
         <div class="row">
             <!-- 2nd row first column -->
-            <div class="col-6 border" id="sigil">
-                <p>What House is this?</p>
-                <br />
-                <div class="row">
+            <div class="col-6" id="sigil">
+                <p class="house">What House is this?</p>
+                <div class="row center">
                     <div class="col-12">
                         <div id="imgDisplay"></div>
                     </div>
                 </div>
                 <br /><br />
-                <p>Hint:</p>
+                <p class="house">Hint:</p>
                 <div class="row">
                     <div class="col-12">
                         <div id="hintImg"></div>
@@ -44,7 +44,7 @@
                 </div>
             </div>
             <!-- 2nd row second column -->
-            <div class="col-6 border" id="gameControl">
+            <div class="col-6" id="gameControl">
                 <p>Press any key to get started!</p>
                 <p>Wins</p>
                 <p id="winScore"></p>
@@ -58,6 +58,16 @@
         </div>
     </div>
     
+    <footer>
+        <div class="container-fluid fixed-bottom" id="end">
+            <div class="row">
+                <div class="col-xs-12 col-md-12">
+                    <p id="lastP">Copyright &copy;</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
     <!-- JavaScript Link -->
     <script type="text/javascript" src="assets/javascript/game.js"></script>
 </body>

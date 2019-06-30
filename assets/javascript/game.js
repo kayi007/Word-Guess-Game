@@ -10,8 +10,8 @@ let imgArr = {
    "arryn": "assets/images/arryn.png",
    "baratheon": "assets/images/baratheon.png",
    "tarly": "assets/images/tarly.png",
-   "tyrell": "assets/images/tyrell.jpeg",
-   "martell": "assets/images/martell.jpg",
+   "tyrell": "assets/images/tyrell.png",
+   "martell": "assets/images/martell.png",
    "frey": "assets/images/frey.png",
    "bolton": "assets/images/bolton.png"
 }
@@ -123,6 +123,9 @@ document.onkeyup = function (event) {
             // clear wrong letter array & display new content
             wrongGuessesArr = [];
             guessContent.textContent = wrongGuessesArr.join();
+            // set new image for new word
+            newImg.setAttribute("src",imgArr[word]);
+            newHint.setAttribute("src",hintImgArr[word]);
         }
     }
     // WRONG LETTER GUESS
@@ -146,6 +149,9 @@ document.onkeyup = function (event) {
         console.log(word);
         dashCreator(word);
         dashContent.textContent = dashArr.join(" ");
+        // set new image for new word
+        newImg.setAttribute("src",imgArr[word]);
+        newHint.setAttribute("src",hintImgArr[word]);
     }
 
     guessLeftContent.textContent = guessLeft;

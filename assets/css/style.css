@@ -3,12 +3,57 @@
 }
 h1{
     text-align: center;
+    display: none;
     padding: 15px;
 }
 p{
     text-align: center;
+    font-family: 'Lustria', serif;
+    color: aliceblue;
 }
 img{
     height: auto;
     max-width: 100%;
+}
+#gameControl{
+    padding-top: 380px;
+}
+#GOT{
+    border-bottom: 2px solid burlywood;
+    height: 180px;
+    background-image: url("../images/got.jpg");
+    background-position: center;
+    background-size: auto;
+    background-repeat: no-repeat;
+}
+body{
+    background-image: url("../images/background.jpg");
+    background-size: 800px 1000px;
+    margin-bottom: 80px;
+    /* background-repeat: repeat-y; */
+}
+#sigil{
+    padding-top: 40px;
+}
+.house{
+    font-family: 'IM Fell English SC', serif;
+    font-size: 30px;
+}
+.center{
+    margin-left: auto;
+    margin-right: auto;
+}
+.container{
+    margin-bottom: 100px;
+}
+#end{
+    text-align: center;
+    font-size: 12px;
+    background-color: black;
+    padding: 10px;
+    border-top: 5px solid gold;
+}
+#lastP{
+    color: silver;
+    margin-bottom: 0;
 }
